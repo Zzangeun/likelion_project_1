@@ -8,18 +8,6 @@ def home(request):
     posts = Post_i.objects
     return render(request, 'info_myself/home.html', {'posts':posts})
 
-def detail(request, post_id):
-    post_detail = get_object_or_404(Post_i, pk = post_id)
-    return render(request, 'info_myself/detail.html', {'post':post_detail})
-
-def post_new(request):
-    if request.method == "POST" :
-        form = PostForm(request.POST)
-        if form.is_valid():
-            post = form.save(commit=False)
-            post.published_date = timezone.datetime.now()
-            post.save()
-            return redirect('detail', post_id=post.pk)
-    else:
-        form = PostForm()
-        return render(request, 'info_myself/new.html', {'form':form})
+def my_infomation(request, post_id):
+    post_my_infomation = get_object_or_404(Post_i, pk = post_id)
+    return render(request, 'info_myself/my_infomation.html', {'post':post_my_infomation})

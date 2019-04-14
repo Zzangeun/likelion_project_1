@@ -1,13 +1,10 @@
 <head>
-  <title> My first blog </title>
+  <title> My Infomation </title>
 </head>
 <body>
   <h1>home</h1>
-  <a href="{% url 'new'%}" class="top-menu">글쓰기</a>
-  {% for post in posts.all %}
-  <div class="container">
-    <h2><a href="/info_myself/home/post/{{post.id}}/">{{post.title}}</a></h2>
-    <p>{{post.created_date}}</p>
-  </div>
-{% endfor %}
+  <a href="{% url 'my_infomation'%}">자기소개</a>
+  {% comment %} <a href="{% url 'my_infomation'%}" class="top-menu">자기소개</a> {% endcomment %}
+  {% comment %} {% for post in posts.all %} {% endcomment %}
+{% comment %} {% endfor %} {% endcomment %}
 </body>

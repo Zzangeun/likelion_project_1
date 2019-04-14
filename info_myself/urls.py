@@ -4,6 +4,5 @@ from info_myself import views
 
 urlpatterns = [
     path('home/', views.home, name='home'),
-    path('home/post/<int:post_id>/', views.detail, name='detail'),
-    path('home/post/new/', views.post_new, name='new'),
+    path('home/post/my_infomation/', views.my_infomation, name='my_infomation'),
 ]
